@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.chandol.study.mybatissample.mapper.CityMapper">
+
+    <select id="selectCityById" resultType="city">
+        SELECT ID
+              ,NAME
+              ,COUNTRY
+              ,POPULATION
+          FROM CITY
+         WHERE ID = #{id}
+    </select>
+
+    <select id="selectAllCity" resultType="city">
+        SELECT ID
+              ,NAME
+              ,COUNTRY
+              ,POPULATION
+          FROM CITY
+    </select>
+
+    <insert id="insertCity">
+      INSERT INTO CITY (NAME, COUNTRY, POPULATION)
+      VALUES (#{name}, #{country}, #{population})
+    </insert>
+
+</mapper>
